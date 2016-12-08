@@ -47,6 +47,13 @@ function reverse(str:string): string {
 let list:string[], reversed:string[] = [];
 list = ['s1tar3t 2 hellow', 's1ta$%r3t 2 hel^low', 's1tar3t 2   low5'];
 for(let e of list){
-  reversed.push(reverse(e));
+  reversed.push(e + ' => ' + reverse(e));
 }
-console.log(reversed);
+
+
+let reverse_btn = document.createElement('button');
+reverse_btn.textContent = "reverseLetters";
+reverse_btn.onclick = function() {
+    alert(reversed.join('\n\r'));
+}
+document.body.appendChild(reverse_btn);

@@ -11,3 +11,12 @@ function isInArray(array:any[], ...numberArray: any[]): boolean {
   }
   return true;
 }
+
+let isInArray_btn = document.createElement('button');
+isInArray_btn.textContent = "isInArray";
+isInArray_btn.onclick = function() {
+    alert('Data: [1,2,3,4], 1,2,3,4 isInArray:' + isInArray([1,2,3,4], 1,2,3,4)
+        + '\n\r Data: [1,2,3,4], 1,2,3,4,5 isInArray:' + isInArray([1,2,3,4], 1,2,3,4,5)
+  );
+}
+document.body.appendChild(isInArray_btn);

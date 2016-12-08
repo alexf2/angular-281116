@@ -14,3 +14,11 @@ function getUnique<T>(...arr:Array<T>):T[] {
   }
   return out;
 }
+
+
+let getUnique_btn = document.createElement('button');
+getUnique_btn.textContent = "getUnique";
+getUnique_btn.onclick = function() {
+    alert('Data: 1,2,3,4,5,"6",5,3,"6" getUnique:' + getUnique<any>(1,2,3,4,5,'6',5,3,'6'));
+}
+document.body.appendChild(getUnique_btn);

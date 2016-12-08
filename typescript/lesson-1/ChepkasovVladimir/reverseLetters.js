@@ -38,6 +38,11 @@ var list, reversed = [];
 list = ['s1tar3t 2 hellow', 's1ta$%r3t 2 hel^low', 's1tar3t 2   low5'];
 for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
     var e = list_1[_i];
-    reversed.push(reverse(e));
+    reversed.push(e + ' => ' + reverse(e));
 }
-console.log(reversed);
+var reverse_btn = document.createElement('button');
+reverse_btn.textContent = "reverseLetters";
+reverse_btn.onclick = function () {
+    alert(reversed.join('\n\r'));
+};
+document.body.appendChild(reverse_btn);
