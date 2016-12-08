@@ -40,3 +40,4 @@ var menuList = [
         ]
     }
 ];
+//# sourceMappingURL=main.js.map
