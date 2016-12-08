@@ -24,7 +24,7 @@ function isInArray(arr) {
 var summator = function () {
     var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+        args[_i - 0] = arguments[_i];
     }
     var result = args.reduce(function (sum, current) {
         if (typeof current === 'string') {
@@ -40,7 +40,7 @@ var summator = function () {
 var getUnique = function () {
     var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+        args[_i - 0] = arguments[_i];
     }
     var result = [args[0]];
     for (var i = 1; i < args.length; i++) {
@@ -107,7 +107,7 @@ var Menu = (function () {
             });
             return ul;
         };
-        // this.menuList = menuList;
+        this.menuList = menuList;
     }
     Menu.prototype.getElem = function () {
         var elem = document.createDocumentFragment();

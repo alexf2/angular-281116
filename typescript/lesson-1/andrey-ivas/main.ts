@@ -3,7 +3,9 @@
  Возвращает true, если все аргументы, кроме первого входят в первый.
  Первым всегда должен быть массив.
  */
-function isInArray(array:any[],...arg:any[]):boolean {
+
+type sbn=number|string|boolean;
+function isInArray(array: sbn[], ...arg: sbn[]): boolean {
     let flag = true;
     for (let i = 0; i < arg.length; i++) {
         if (array.indexOf(arg[i]) < 0) {
@@ -17,8 +19,8 @@ console.log(isInArray([1, 2, 'one'], 1, 'one'));
 /*
  писать функцию summator(), которая сумирует переданые ей аргументы.
  Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
-*/
-function getType(elem:any):string {
+ */
+function getType(elem: any): string {
     let res;
     if (typeof elem === 'string') {
         res = 'string';
@@ -28,26 +30,26 @@ function getType(elem:any):string {
     }
     return res;
 }
-function summator(...arg:any[]):string {
-     let sum:number = 0;
-        for (let i = 0; i < arg.length; i++) {
-            let elem = arg[i];
-            switch (getType(elem)) {
-                case 'string': {
-                    if(!isNaN(elem)) {
-                        sum += parseInt(elem);
-                    }
-                    break;
+function summator(...arg: any[]): string {
+    let sum: number = 0;
+    for (let i = 0; i < arg.length; i++) {
+        let elem = arg[i];
+        switch (getType(elem)) {
+            case 'string': {
+                if (!isNaN(elem)) {
+                    sum += parseInt(elem);
                 }
-                case 'number': {
-                    sum += elem;
-                    break;
-                }
-                default: {
-                    sum = 0;
-                }
+                break;
+            }
+            case 'number': {
+                sum += elem;
+                break;
+            }
+            default: {
+                sum = 0;
             }
         }
+    }
     return `The sum is ${sum}`;
 }
 
@@ -59,15 +61,15 @@ console.log(summator(1, 'rr', 2, '2'));
  Порядок элементов результирующего массива должен совпадать с порядком,
  в котором они встречаются в оригинальной структуре.
  */
-function getUnique(...arr:any[]):any[] {
-    let res:any = [];
-    let k:number = 0;
+function getUnique(...arr: any[]): any[] {
+    let res: any = [];
+    let k: number = 0;
     for (let i = 0; i < arr.length; i++) {
         let j = 0;
         while (j < k && res[j] !== arr[i]) j++;
         if (j == k) res[k++] = arr[i];
     }
-   return res;
+    return res;
 }
 console.log(getUnique(1, 2, 4, 4, 'one', 5, 'one', false, false));
 /*
@@ -77,24 +79,25 @@ console.log(getUnique(1, 2, 4, 4, 'one', 5, 'one', false, false));
  s1ta$%r3t 2 hel^low  ->  t1ra$%t3s 2 wol^leh
  s1tar3t 2   low5  ->  t1rat3s 2   wol5
  */
-function reverseLetter(str:string) {
-    let main:string[];
-    let filtered:string[];
+function reverseLetter(str: string) {
+    let main: string[];
+    let filtered: string[];
 
     main = str.split(' ').map(insertLetter);
     console.log(main.join(' '));
 
-    function insertLetter(value:string):string {
-        let word:string[] = value.split('');
+    function insertLetter(value: string): string {
+        let word: string[] = value.split('');
         filtered = word.filter(isFilter).reverse();
-        word.forEach((elem:string, index:number) => {
+        word.forEach((elem: string, index: number) => {
             if (!elem.match(/\D/)) {
                 filtered.splice(index, 0, elem);
             }
         });
         return filtered.join('');
     }
-    function isFilter(elem:string):boolean {
+
+    function isFilter(elem: string): boolean {
         return (elem.match(/\D/)) ? true : false
     }
 }

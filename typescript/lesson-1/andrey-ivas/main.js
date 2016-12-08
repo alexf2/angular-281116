@@ -20,7 +20,7 @@ console.log(isInArray([1, 2, 'one'], 1, 'one'));
 /*
  писать функцию summator(), которая сумирует переданые ей аргументы.
  Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
-*/
+ */
 function getType(elem) {
     var res;
     if (typeof elem === 'string') {
@@ -34,7 +34,7 @@ function getType(elem) {
 function summator() {
     var arg = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        arg[_i - 0] = arguments[_i];
+        arg[_i] = arguments[_i];
     }
     var sum = 0;
     for (var i = 0; i < arg.length; i++) {
@@ -67,7 +67,7 @@ console.log(summator(1, 'rr', 2, '2'));
 function getUnique() {
     var arr = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        arr[_i - 0] = arguments[_i];
+        arr[_i] = arguments[_i];
     }
     var res = [];
     var k = 0;

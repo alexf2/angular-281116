@@ -1,5 +1,6 @@
 
 // Task #1
+
 function isInArray(array: (string | number | boolean)[], ...rest: (string | number | boolean)[]): boolean {
     var result = true;
     rest.map(val => {

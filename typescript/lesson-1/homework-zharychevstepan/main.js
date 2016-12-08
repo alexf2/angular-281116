@@ -1,3 +1,4 @@
+// Task #1
 function isInArray(array) {
     var rest = [];
     for (var _i = 1; _i < arguments.length; _i++) {
@@ -11,20 +12,22 @@ function isInArray(array) {
     });
     return result;
 }
+// Task #2
 function summator() {
     var rest = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        rest[_i - 0] = arguments[_i];
+        rest[_i] = arguments[_i];
     }
     var sum = rest.reduce(function (a, b) {
         return (parseInt(a.toString()) || 0) + (parseInt(b.toString()) || 0);
     }, 0);
     return parseInt(sum.toString());
 }
+// Task #3
 function getUnique() {
     var rest = [];
     for (var _i = 0; _i < arguments.length; _i++) {
-        rest[_i - 0] = arguments[_i];
+        rest[_i] = arguments[_i];
     }
     var result = [];
     rest.map(function (element) {
@@ -34,6 +37,7 @@ function getUnique() {
     });
     return result;
 }
+// Task #4
 function reverseString(str) {
     var letterRegex = /[a-zA-Z]/g;
     return str.split(' ').map(function (word) {

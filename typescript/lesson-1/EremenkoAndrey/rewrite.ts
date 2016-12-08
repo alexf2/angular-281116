@@ -9,7 +9,7 @@ function rewrite(text:string){
     words.forEach((word:string):void => {
         var wordLen:number = word.length,
             words:string[] = [],
-            symbols:(string|void)[] = [];
+            symbols:(string)[] = [];
             symbols.length = wordLen;
 
         for (var i:number = 0; i < wordLen; i++) {

@@ -81,8 +81,8 @@ interface Controls {
 
 class Menu implements Controls {
 
-    constructor(private menuList:{}) {
-        this.menuList = menuList;
+    public constructor(private menuList:{}) {
+        // this.menuList = menuList;
     }
 
     public getElem () {
