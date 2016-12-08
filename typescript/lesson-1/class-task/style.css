@@ -1,6 +1,6 @@
 .menu li {
     cursor:pointer;
-    list-style-type:none;
+    list-style-type:none;    
 }
 .menu li a {
     display:block;
@@ -40,5 +40,5 @@
     display:none;
 }
 .menu .menu-open>ul {
-    display:block;
+    display:block;    
 }
