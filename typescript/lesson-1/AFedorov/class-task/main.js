@@ -1,3 +1,4 @@
+"use strict";
 var menuList = [
     {
         title: 'Животные',

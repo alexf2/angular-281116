@@ -5,13 +5,14 @@
         "noImplicitAny": false,
         "sourceMap": true,
         "strictNullChecks": true,
-	    "emitDecoratorMetadata": true,
+	"emitDecoratorMetadata": true,
     	"experimentalDecorators": true
     },    
 
     "filesGlob": [
-        "typescript/**/*.ts",
-        "!node_modules/**"
+        "AFedorov/class-task/**/*.ts",
+        "!node_modules/**",
+        "!typings/**"
     ]
 
 }

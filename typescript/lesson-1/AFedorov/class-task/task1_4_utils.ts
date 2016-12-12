@@ -2,10 +2,11 @@
 
 import * as shim from 'es6-shim'
 
-type Summable = number | string
+type Summable = number | string 
+type Comparable = number | string | boolean | null
 
 class Utils {
-    static isInArray<T>(arr: T[], ...args: T[]): boolean {
+    static isInArray<T extends Comparable>(arr: T[], ...args: T[]): boolean {
         if (!arr || arr.length === 0)
             return args.length === 0
 
@@ -19,15 +20,11 @@ class Utils {
     }
 
     static summator(...args: Summable[]): Summable {
-        if (args.length === 0)
-            return 0
-
-        let res = args[ 0 ]
+        
+        let res = 0
         if (args.length > 1)
-            for (let i = 1; i < args.length; ++i) {                                    
-                    res += args[ i ]
-                    
-            }
+            for (let v of args)                                     
+                    res += Number(v)                                
 
         return res 
     }
@@ -55,10 +52,11 @@ const testInArray = () => {
 
 const testSummator = () => {
     console.log(Utils.summator())
-    console.log(Utils.summator(null))
+    //console.log(Utils.summator(null))
     console.log(Utils.summator(10, 20, 30))
     console.log(Utils.summator("a", "xx", "cc"))
     console.log(Utils.summator(10, 'zz', 30))
+    console.log(Utils.summator(10, '5', 30))
 }
 
 const testUnique = () => {

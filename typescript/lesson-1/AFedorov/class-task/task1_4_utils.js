@@ -23,12 +23,11 @@ var Utils = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i - 0] = arguments[_i];
         }
-        if (args.length === 0)
-            return 0;
-        var res = args[0];
+        var res = 0;
         if (args.length > 1)
-            for (var i = 1; i < args.length; ++i) {
-                res += args[i];
+            for (var _a = 0, args_2 = args; _a < args_2.length; _a++) {
+                var v = args_2[_a];
+                res += Number(v);
             }
         return res;
     };
@@ -38,8 +37,8 @@ var Utils = (function () {
             args[_i - 0] = arguments[_i];
         }
         var lookup = new Set();
-        for (var _a = 0, args_2 = args; _a < args_2.length; _a++) {
-            var val = args_2[_a];
+        for (var _a = 0, args_3 = args; _a < args_3.length; _a++) {
+            var val = args_3[_a];
             if (!lookup.has(val))
                 lookup.add(val);
         }
@@ -58,10 +57,11 @@ var testInArray = function () {
 };
 var testSummator = function () {
     console.log(Utils.summator());
-    console.log(Utils.summator(null));
+    //console.log(Utils.summator(null))
     console.log(Utils.summator(10, 20, 30));
     console.log(Utils.summator("a", "xx", "cc"));
     console.log(Utils.summator(10, 'zz', 30));
+    console.log(Utils.summator(10, '5', 30));
 };
 var testUnique = function () {
     console.log(Utils.getUnique(1, 12, 15, 5, 4, 1));

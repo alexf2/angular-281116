@@ -1,4 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
+"use strict";
 var InstantMenu = (function () {
     function InstantMenu(rootSelector, items) {
         var _this = this;

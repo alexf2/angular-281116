@@ -1,11 +1,7 @@
 /// <reference path="../typings/index.d.ts" />
+import  {MenuTree} from './types'
 
-declare var menuList: Object
-
-type MenuTree = {
-    title: string,
-    items: MenuTree[]
-}
+declare var menuList: MenuTree[]
 
 class InstantMenu {
     private root: Element | null 

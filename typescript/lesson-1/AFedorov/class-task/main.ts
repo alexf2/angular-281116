@@ -1,4 +1,6 @@
-let menuList = [
+import {MenuTree} from './types'
+
+let menuList: MenuTree[] = [
     {
         title: 'Животные',
         items: [
