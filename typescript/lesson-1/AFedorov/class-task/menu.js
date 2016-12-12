@@ -7,7 +7,6 @@ var InstantMenu = (function () {
         this.clickHandler = function (ev) {
             var target = ev.target;
             if (target.tagName.toLowerCase() === 'li') {
-                //this.internalToggle(target)
                 _this.toggle(target.textContent);
                 ev.stopPropagation();
             }

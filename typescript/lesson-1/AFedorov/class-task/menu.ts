@@ -9,17 +9,16 @@ class InstantMenu implements IMenu {
     constructor(private rootSelector: string, private items: MenuTree[]) {        
     }
 
-    private clickHandler = (ev) => {
+    private clickHandler = (ev: Event) => {
         const {target} = ev         
-        if (target.tagName.toLowerCase() === 'li')
+        if ((target as HTMLElement).tagName.toLowerCase() === 'li')
         {
-            //this.internalToggle(target)
-            this.toggle(target.textContent)
+            this.toggle((target as HTMLElement).textContent)
             ev.stopPropagation()            
         }
     }
 
-    toggle (label: string): void {
+    toggle (label: string | null): void {
         if (this.root) {
             let elem = Array.from(this.root.querySelectorAll('li')).filter( (el) => (el.textContent === label) )
             if (elem.length > 0) {
