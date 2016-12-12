@@ -1,9 +1,9 @@
 /// <reference path="../typings/index.d.ts" />
-import  {MenuTree} from './types'
+import  {MenuTree, IMenu} from './types'
 
 declare var menuList: MenuTree[]
 
-class InstantMenu {
+class InstantMenu implements IMenu {
     private root: Element | null 
 
     constructor(private rootSelector: string, private items: MenuTree[]) {        
@@ -53,7 +53,7 @@ class InstantMenu {
         this.populate(menuHost, this.items)
     }
 
-    populate(host:Element, items:MenuTree[]) {
+    populate(host:Element, items:MenuTree[]): void {
         for (let item of items) {
             
             let li = document.createElement('li')
