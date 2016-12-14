@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>    
-
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Flicker search</title>        
 </head>
+
 <body>
-    <div id="container">Hello!</div>
+    <div id='searchForm'>
+        <div class='errorPane'></div>
+
+        <label for="pictureName">Search a photo by keyword:</label>&nbsp;&nbsp;
+        <input id="pictureName" name="pictureName" required placeholder="Search request" type="text" />&nbsp;&nbsp;    
+
+        <label for="topLimit">Top limit:</label>&nbsp;&nbsp;
+        <input id="topLimit" name="topLimit" required placeholder="Top count" type="text" value='10' min='1' size='5' />&nbsp;&nbsp;
+
+        <input type="button" id="startSearch" name="startSearch" value="Search"  />
+        <div class='resultPane'></div>
+    </div>
+
+    <script>    
+      var app = new App('#searchForm')  
+    </script>
+
 </body>
+
 </html>

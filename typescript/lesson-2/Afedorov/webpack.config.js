@@ -8,13 +8,14 @@ module.exports = {
     target: 'web',
     
     entry: {
-        main: ['./src/app.ts']
+        App: ['./src/app.ts']
         //css: ['./src/main.less']
     },        
     output: {
         path: path.join(__dirname, 'build'),
         filename: '[name].[hash].js',
-        publicPath: '/'
+        publicPath: '/',
+        library: "[name]"
     },
 
     devtool: 'source-map',
@@ -48,7 +49,8 @@ module.exports = {
     plugins: [
         new webpack.NoErrorsPlugin(),        
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            inject: 'head'
         }),
 
         new ExtractTextPlugin({filename: 'css/[name].css', allChunks: true})        
